@@ -1,7 +1,8 @@
+import './selectPost'
 
 export default function Post (props) {
 // export default function Post (item) { other variant with destructurization
-    let {item} = props
+    let {item, selectPost} = props
     return(
         <div>
             {item.userId} - {item.body} -

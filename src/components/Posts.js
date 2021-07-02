@@ -1,9 +1,10 @@
 import Post from "./post/Post";
 
+
 export default function Posts (props){
 // export default function Posts ({item}){ destructurization variant
 
-    let {item} = props;
+    let {item, selectPost} = props;
     console.log(item)
 
     return (
