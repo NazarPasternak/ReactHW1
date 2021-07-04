@@ -1,14 +1,17 @@
-import './selectPost'
+// import './selectPost'
 
-export default function Post (props) {
-// export default function Post (item) { other variant with destructurization
-    let {item, selectPost} = props
+export default function Post ({item, selectPost}) {
+
+    // let  {item, selectPost} = props;
+
     return(
         <div>
-            {item.userId} - {item.body} -
+            {item.userId} - {item.title} -
             <button onClick={()=> {
                 selectPost(item.id)
             }}>Click on</button>
         </div>
     )
 }
+
+//

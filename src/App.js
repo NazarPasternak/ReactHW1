@@ -6,7 +6,6 @@ import Posts from "./components/Posts";
 import PostDetails from "./components/PostDetails/postDetails";
 
 
-
 function App() {
     let [posts, setPosts] = useState([]);
 
@@ -21,7 +20,7 @@ function App() {
 
 
     function selectPost(id) {
-        console.log(id);
+        // console.log(id);
         getPost(id).then(({data}) =>{
             setPostDetails(data);
         })
@@ -34,7 +33,6 @@ function App() {
           {
               postDetails && <PostDetails item={postDetails}/>
           }
-
       </div>
   );
 }
