@@ -10,7 +10,8 @@ export default function Posts (props){
     return (
         <div>
             {
-                item.map(value => <Post key={value.id} item={value} selectPost={selectPost}/>)
+                item.map(value => <Post key={value.id} item={value}
+                                        selectPost={selectPost}/>)
             }
         </div>
     )

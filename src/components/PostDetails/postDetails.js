@@ -3,7 +3,7 @@ export default function PostDetails({item}){
         <div>
 
             {
-                item.title
+                item.body
             }
             
         </div>
