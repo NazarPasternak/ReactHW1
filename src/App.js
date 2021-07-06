@@ -1,46 +1,38 @@
-// import './App.css';
-import './services/API'
-import {getPosts, getPost} from "./services/API";
-import {useEffect, useState} from "react";
-import Posts from "./components/Posts";
-import PostDetails from "./components/PostDetails/postDetails";
+import {useState} from "react";
+
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import Users from "./components/users/Users";
+import Posts from "./components/posts/Posts";
+import Comments from "./components/comments/Comments";
 
 
-function App() {
-    let [posts, setPosts] = useState([]);
+export default function App () {
+    return (
 
-    let [postDetails, setPostDetails] = useState(null);
+        <Router>
+            <div>
+                <div><Link to="/users">users page</Link></div>
+                <div><Link to="/posts">posts page</Link></div>
+                <div><Link to="/comments">comments post</Link></div>
 
+                <Route path={'/users'} render={() => {
+                    return <Users/>
+                }}/>
 
-    useEffect(() => {
-        getPosts().then(response =>{
-            setPosts(response.data)
-        })
-    }, [])
+                <Route path={'/posts'} render={() =>{
+                    return <Posts/>
+                }}/>
 
+                <Route path={'/comments'} render={() =>{
+                    return <Comments/>
+                }}/>
 
-    function selectPost(id) {
-        // console.log(id);
-        getPost(id).then(({data}) =>{
-            setPostDetails(data);
-        })
-    }
+               {/* <Route path={'/posts'} component={Posts}/>*/}
+               {/*<Route path={'/comments'}>*/}
+               {/*    <Comments/>*/}
 
-  return (
-      <div>
-          <Posts item={posts} selectPost={selectPost}/>
-          <hr/>
-          {
-              postDetails && <PostDetails item={postDetails}/>
-          }
-      </div>
-  );
+            </div>
+        </Router>
+
+    )
 }
-
-export default App;
-
-
-
-
-
-
