@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import Users from "./components/users/Users";
 import Posts from "./components/posts/Posts";
