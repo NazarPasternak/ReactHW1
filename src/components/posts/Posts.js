@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {getPosts} from "../API/API";
 import User from "../user/User";
+import Post from "../post/Post";
 
 
 export default function Posts (){
@@ -14,13 +15,9 @@ export default function Posts (){
 
     }, [])
 
-    const fromApp = (id) => {
-        console.log(id)
-    }
-
     return (
         <div>
-            {posts.map(value => <User singlePost={value} fromApp={fromApp}/>)}
+            {posts.map(value =><Post key={value.id} singlePost={value}/>)}
         </div>
     );
 }

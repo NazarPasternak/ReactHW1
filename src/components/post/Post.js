@@ -1,7 +1,7 @@
 export default function Post ({singlePost, fromApp}){
     return (
         <div>
-                {singlePost.body} - {fromApp}
+            {singlePost.id} - {singlePost.title} - {fromApp}
 
         </div>
     )
